@@ -7,7 +7,7 @@ const app = express()
 // const fetch=require{'fetch'};
 app.use(bodyParser.json());
 app.use(express.static('public'))
-// app.use(express.static('uploads'))
+app.use(express.static('uploads'))
 const port = process.env.PORT ||6500
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -72,13 +72,13 @@ var options = {
 };
 
 
-// var options = {
-//   method: 'PUT',
-//   url: 'https://joshnodechats.azurewebsites.net/api/PubSub2',
-//   params: {code: '-bj3I0BgdUM3j1xbF9gJdSyBxTRZbJnWZWMhoJNLSpoSAzFu7ZlNKQ=='},
-//   headers: {'table-name': 'CHATLOGS', 'update-secure-chat': '1'},
-//   data: {chatid: req.body.chat, messageid: req.body.msgid}
-// };
+var options = {
+  method: 'PUT',
+  url: 'https://joshnodechats.azurewebsites.net/api/PubSub2',
+  params: {code: '-bj3I0BgdUM3j1xbF9gJdSyBxTRZbJnWZWMhoJNLSpoSAzFu7ZlNKQ=='},
+  headers: {'table-name': 'CHATLOGS', 'update-secure-chat': '1'},
+  data: {chatid: req.body.chat, messageid: req.body.msgid}
+};
 
 axios.request(options).then(function (response) {
   // console.log('lllllllllllllllllll')
@@ -148,11 +148,11 @@ console.log('Decrypted:', decryptedText);
 //     cb(null, folderName);
 //   };
 
-//   upload(req, res, (err) => {
-//     if (err) {
-//       console.error(err);
-//       return res.status(500).send(err);
-//     }
+  upload(req, res, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
 
 //     console.log(req.files);
 
