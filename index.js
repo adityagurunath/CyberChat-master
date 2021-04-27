@@ -156,10 +156,10 @@ console.log('Decrypted:', decryptedText);
 
 //     console.log(req.files);
 
-//     // If everything went fine, send a success response
-//     res.send("Files uploaded successfully!");
-//   });
-// });
+    // If everything went fine, send a success response
+    res.send("Files uploaded successfully!");
+  });
+});
 
 
 
