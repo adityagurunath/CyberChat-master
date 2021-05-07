@@ -127,17 +127,17 @@ console.log('Decrypted:', decryptedText);
 //     cb(null, "uploads");
 //   },
 //   filename: function (req, file, cb) {
-//     cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
-//   },
-// });
+    cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
+  },
+});
 
-// // Initialize upload
-// const upload = multer({
-//   storage: storage,
-//   limits: { fileSize: 1000000 },
-// }).array("photos", 10);
+// Initialize upload
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 1000000 },
+}).array("photos", 10);
 
-// app.post("/upload", (req, res) => {
+app.post("/upload", (req, res) => {
 //   // Create a new subfolder with a unique name based on the current timestamp
 //   const timestamp = Date.now();
 //   const folderName = `uploads/${timestamp}`;
